@@ -1,182 +1,1038 @@
-.about .column{
-    width:100%;
-  }
- 
-  .about .left{
-    width:50%;
-    height:0;
-  }
-  
-  .about .right{
-   width: 90%;
-    
-  }
-  
-  .about .left img{
-    width: 80%;
-    padding-top:125px;
-  }
-  .about-heading{
-       margin-left: 290px;
-      /* margin-top: 60px; */
-    
-     
-      font-size: 3.1rem;
-    font-family: Optimanova;
-    font-weight: 500;
-    color: #002855;
-    margin-bottom: 70px;
-  }
-  .abouttext{
-  margin-left: 650px;
-    margin-top: 0px;
-    width: 800px;
-    height: 300px;
-    font-size: 23px;
-    font-family:-webkit-pictograph;
-  }
-  /* slideshow */
- /* meet */
- .meet-title{
-   text-align: center;
-   font-size: 40px;
-   font-family: serif; 
-   margin-top: 70px;
- }
- .ecosystem p{
-   font-style: inherit;
- }
- .icons ul{
-   margin-left: 270px;
- }
- .icons li{
-   margin-right: 50px;
- }
- .icons ul li{
-  display:block;
-  float:left;
-  padding:0 10px;
- }
- .icons ul li p{
-   font-size: 20px;
-   width: 215px;
-font-family: sans-serif;
- }
- /* footer */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #f2f2f2;
+}
+nav {
+  background: #1e3163;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 100px;
+}
+nav .logo {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+nav .nav-items {
+  display: flex;
+  flex: 1;
+  /* padding: 0 0 0 45px; */
+}
+nav .nav-items li {
+  list-style: none;
+  padding: 0 15px;
+  font-family: inherit;
+}
+nav .nav-items li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav .nav-items li a:hover {
+  color: #ff3d00;
+}
+nav form {
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: white;
+  min-width: 18% !important;
+  border-radius: 2px;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+}
 
-  
-  body {
+nav form .search-data {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: black;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav form button {
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav form button:hover {
+  background: #e63600;
+}
+nav .menu-icon,
+nav .cancel-icon,
+nav .search-icon {
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+nav .menu-icon span,
+nav .cancel-icon,
+nav .search-icon {
+  display: none;
+}
+@media (max-width: 1245px) {
+  nav {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1140px) {
+  nav {
+    padding: 0px;
+  }
+  nav .logo {
+    flex: 2;
+    text-align: center;
+  }
+  nav .nav-items {
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background: #14181f;
+    display: inline-block;
+    transition: left 0.3s ease;
+  }
+  nav .nav-items.active {
+    left: 0px;
+  }
+  nav .nav-items li {
+    line-height: 40px;
+    margin: 30px 0;
+  }
+  nav .nav-items li a {
+    font-size: 20px;
+  }
+  nav form {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  nav form.active {
+    top: 95px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav form:before {
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border: 10px solid transparent;
+    border-bottom-color: #1e232b;
+    margin: -20px 0 0;
+  }
+  nav form:after {
+    position: absolute;
+    content: "";
+    height: 60px;
+    padding: 2px;
+    background: #1e232b;
+    border-radius: 2px;
+    min-width: calc(100% + 20px);
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  nav .menu-icon {
+    display: block;
+  }
+  nav .search-icon,
+  nav .menu-icon span {
+    display: block;
+  }
+  nav .menu-icon span.hide,
+  nav .search-icon.hide {
+    display: none;
+  }
+  nav .cancel-icon.show {
+    display: block;
+  }
+}
+
+nav .logo.space {
+  color: red;
+  padding: 0 5px 0 0;
+}
+@media (max-width: 980px) {
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon {
+    margin: 0 20px;
+  }
+  nav form {
+    right: 30px;
+  }
+}
+@media (max-width: 350px) {
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+
+div.container {
+  font-family: Raleway;
+  margin: 0 auto;
+  /* padding: 4em 3em; */
+  text-align: center;
+}
+
+div.container a {
+  color: #fff;
+  text-decoration: none;
+  font: 20px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before,
+div.topBotomBordersOut a:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before {
+  top: 0px;
+  transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after {
+  bottom: 0px;
+  transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before,
+div.topBotomBordersOut a:hover:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+/* Dropdown button */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+
+  margin: 0;
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+  /* background-color: red; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1e232b;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* video */
+video {
+  object-fit: cover;
+  width: 98.75vw;
+  height: 100vh;
+  /* position: fixed; */
+  top: 50;
+  left: 0;
+  opacity: 0.7;
+}
+/* about */
+.about .column {
+  width: 100%;
+}
+
+.about .left {
+  width: 50%;
+  height: 0;
+}
+
+.about .right {
+  width: 90%;
+}
+
+.about .left img {
+  width: 80%;
+  padding-top: 125px;
+}
+.about-heading {
+  margin-left: 290px;
+  /* margin-top: 60px; */
+
+  font-size: 3.1rem;
+  font-family: Optimanova;
+  font-weight: 500;
+  color: #002855;
+  margin-bottom: 70px;
+}
+.abouttext {
+  margin-left: 650px;
+  margin-top: 0px;
+  width: 800px;
+  height: 300px;
+  font-size: 23px;
+  font-family: -webkit-pictograph;
+}
+
+@media only screen and (max-width: 380px) {
+  .about .left img {
+    width: 200%;
+    padding-top: 225px;
+  }
+  .about-heading {
+    margin-left: 0px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+  .abouttext {
+    margin-left: 0px;
+    margin-top: 10px;
+    width: 320px;
+    font-size: 16px;
+    font-family: serif;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .about .right {
+    width: 100%;
+  }
+  .about .left img {
+    width: 190%;
+    padding-top: 225px;
+    padding-left: 40px;
+  }
+  .about-heading {
+    margin-left: 130px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+  .abouttext {
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 500px;
+    font-size: 19px;
+    font-family: serif;
+    text-align: center;
+  }
+}
+
+/*services*/
+/* Main heading for card's front cover */
+.card-front__heading {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Main heading for inside page */
+.inside-page__heading {
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+.inside-page__heading,
+.card-front__text-view {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+.inside-page__heading--city,
+.card-front__text-view--city {
+  color: #ff62b2;
+}
+
+.inside-page__heading--ski,
+.card-front__text-view--ski {
+  color: #2aaac1;
+}
+
+.inside-page__heading--beach,
+.card-front__text-view--beach {
+  color: #fa7f67;
+}
+
+.inside-page__heading--camping,
+.card-front__text-view--camping {
+  color: #00b97c;
+}
+
+/* Front cover */
+
+.card-front__tp {
+  color: #fafbfa;
+}
+
+/* For pricing text on card front cover */
+.card-front__text-price {
+  font-size: 1.2rem;
+  margin-top: -0.2rem;
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+.inside-page__text {
+  color: #333;
+}
+
+/* Icons ===========================================*/
+
+.card-front__icon {
+  fill: #fafbfa;
+  font-size: 3vw;
+  height: 3.25rem;
+  margin-top: -0.5rem;
+  width: 3.25rem;
+}
+
+/* Buttons =================================================*/
+
+.inside-page__btn {
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: 0.7rem 0.75rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 90%;
+  z-index: 10;
+}
+
+.inside-page__btn::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+}
+
+.inside-page__btn--city {
+  border-color: #ff40a1;
+  color: #ff40a1;
+}
+
+.inside-page__btn--city::before {
+  background-color: #ff40a1;
+}
+
+.inside-page__btn--ski {
+  border-color: #279eb2;
+  color: #279eb2;
+}
+
+.inside-page__btn--ski::before {
+  background-color: #279eb2;
+}
+
+.inside-page__btn--beach {
+  border-color: #fa7f67;
+  color: #fa7f67;
+}
+
+.inside-page__btn--beach::before {
+  background-color: #fa7f67;
+}
+
+.inside-page__btn--camping {
+  border-color: #00b97d;
+  color: #00b97d;
+}
+
+.inside-page__btn--camping::before {
+  background-color: #00b97d;
+}
+
+.inside-page__btn:hover {
+  color: #fafbfa;
+}
+
+.inside-page__btn:hover::before {
+  transform: scaleY(1);
+}
+
+/* Layout Structure=========================================*/
+
+.card-main {
+  background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Container to hold all cards in one place */
+.card-area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+/* Card ============================================*/
+
+/* Area to hold an individual card */
+.card-section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  margin-top: 900px;
+}
+
+/* A container to hold the flip card and the inside page */
+.card {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 15rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 15rem;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+  height: 15rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 15rem;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+.flip-card > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+.card-front {
+  background-color: #fafbfa;
+  height: 15rem;
+  width: 15rem;
+}
+
+/* Front side's top section */
+.card-front__tp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.card-front__tp--city {
+  background: linear-gradient(to bottom, #ff73b9, #ff40a1);
+}
+
+.card-front__tp--ski {
+  background: linear-gradient(to bottom, #47c2d7, #279eb2);
+}
+
+.card-front__tp--beach {
+  background: linear-gradient(to bottom, #fb9b88, #f86647);
+}
+
+.card-front__tp--camping {
+  background: linear-gradient(to bottom, #00db93, #00b97d);
+}
+
+/* Front card's bottom section */
+.card-front__bt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styling for the back side of the flip card */
+
+.card-back {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
+}
+
+/* Specifically targeting the <video> element */
+.video__container {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Inside page */
+
+.inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 15rem;
+  z-index: 1;
+}
+
+.inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+/* Functionality ====================================*/
+
+/* This is to keep the card centered (within its container) when opened */
+.card:hover {
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 30rem;
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.card:hover .flip-card__container {
+  transform: rotateY(-180deg);
+}
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* current topics */
+html {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+body {
+  height: 100%;
+}
+.hero-section {
+  margin-top: 500px;
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.filtercard-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media (min-width: 540px) {
+  .filtercard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .filtercard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.filtercard {
+  list-style: none;
+  position: relative;
+}
+
+.filtercard:before {
+  content: "";
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.filtercard__background {
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: filter 200ms linear, transform 200ms linear;
+}
+
+.filtercard:hover .filtercard__background {
+  transform: scale(1.05) translateZ(0);
+}
+
+.filtercard-grid:hover > .filtercard:not(:hover) .filtercard__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.filtercard__content {
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.filtercard__category {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.filtercard__heading {
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/*slideshow*/
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {
+  font-style: italic;
+}
+
+/* Add a blue color to the author */
+.author {
+  color: cornflowerblue;
+}
+/*meet*/
+.meet-title {
+  text-align: center;
+  font-size: 40px;
+  font-family: serif;
+  margin-top: 70px;
+}
+.ecosystem p {
+  font-style: inherit;
+}
+.icons ul {
+  margin-left: 270px;
+}
+.icons li {
+  margin-right: 50px;
+}
+.icons ul li {
+  display: block;
+  float: left;
+  padding: 0 10px;
+}
+.icons ul li p {
+  font-size: 20px;
+  width: 215px;
+  font-family: sans-serif;
+}
+body {
   font-family: poppins;
   margin: 0;
   display: grid;
   /* font-size: 14px; */
-  }
-  header p {
+}
+header p {
   padding: 50px;
   text-align: center;
   color: #bebebe;
   text-transform: uppercase;
   font-size: 65px;
   font-weight: 700;
-  }
-  .footer {
+}
+.footer {
   display: flex;
   flex-flow: row wrap;
   padding: 50px;
   color: #fff;
   background-color: darkblue;
   box-sizing: border-box;
-  }
-  
-  .footer > * {
-  flex:  1 100%;
-  }
-  
-  .l-footer {
+}
+
+.footer > * {
+  flex: 1 100%;
+}
+
+.l-footer {
   margin-right: 1.25em;
   margin-bottom: 2em;
-  }
-  
-  h2 {
+}
+
+h2 {
   font-weight: 400;
   font-size: 15px;
-  }
-  
-  .footer ul {
+}
+
+.footer ul {
   list-style: none;
   padding-left: 0;
-  }
-  
-  .footer li {
+}
+
+.footer li {
   line-height: 2em;
-  }
-  
-  .footer a {
+}
+
+.footer a {
   text-decoration: none;
-  }
-  
-  .r-footer {
+}
+
+.r-footer {
   display: flex;
   flex-flow: row wrap;
-  }
-  
-  .r-footer > * {
+}
+
+.r-footer > * {
   flex: 1 50%;
   margin-right: 1.25em;
-  }
-  
-  .box a {
+}
+
+.box a {
   color: #999;
-  }
-  
-  .h-box {
+}
+
+.h-box {
   column-count: 2;
   column-gap: 1.25em;
-  }
-  
-  .b-footer {
+}
+
+.b-footer {
   text-align: center;
   color: #999;
   padding-top: 50px;
-  }
-  
-  .l-footer p {
+}
+
+.l-footer p {
   padding-right: 20%;
   color: #999;
-  }   
-  
-  @media screen and (min-width: 600px) {
+}
+
+@media screen and (min-width: 600px) {
   .r-footer > * {
-  flex: 1;
+    flex: 1;
   }
-  
+
   .features {
-  flex-grow: 2;
+    flex-grow: 2;
   }
-  
+
   .l-footer {
-  flex: 1 0px;
+    flex: 1 0px;
   }
-  
+
   .r-footer {
-  flex: 2 0px;
+    flex: 2 0px;
   }
+}
+/* Responsive */
+@media screen and (min-width: 600px) {
+  .r-footer > * {
+    flex: 1;
   }
-                       /* Responsive */
-                       @media screen and (min-width: 600px) {
-                        .r-footer > * {
-                            flex: 1;
-                        }
-                    
-                        .features {
-                            flex-grow: 2;
-                        }
-                    
-                        .l-footer {
-                            flex: 1 0px;
-                        }
-                    
-                        .r-footer {
-                            flex: 2 0px;
-                        }
-                    }
+
+  .features {
+    flex-grow: 2;
+  }
+
+  .l-footer {
+    flex: 1 0px;
+  }
+
+  .r-footer {
+    flex: 2 0px;
+  }
+}
